@@ -4,7 +4,7 @@ This repo contains my own solutions. Please see the [original repo](https://gith
 
 Note that AboutStrings.cs behaves differently on Windows and Mac, so the solutions in the file may not work for everyone. Also pay attention to what Visual Studio Code indicates for your line endings.
 
-- Dawn DeMeo
+~ Dawn DeMeo
 
 
 

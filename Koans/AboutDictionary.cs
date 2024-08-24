@@ -15,8 +15,8 @@ public class AboutDictionary : Koan
 		dict.Add("Value", "Key");
 		var firstElement = dict.First();
 
-		Assert.Equal(FILL_ME_IN, firstElement.Key); // Key
-		Assert.Equal(FILL_ME_IN, firstElement.Value); // Value
+		Assert.Equal("Value", firstElement.Key); // Key
+		Assert.Equal("Key", firstElement.Value); // Value
 	}
 
 	//Pass keys to get their values.
@@ -30,7 +30,7 @@ public class AboutDictionary : Koan
 		dict.Add("Japan", "Tokyo");
 
 		var key = "Japan";
-		Assert.Equal(FILL_ME_IN, dict[key]); // What is the value?            
+		Assert.Equal("Tokyo", dict[key]); // What is the value?            
 	}
 
 	//Check if a key exists in Dictionary.
@@ -42,9 +42,10 @@ public class AboutDictionary : Koan
 		dict.Add("United Kingdom", "London");
 		dict.Add("Poland", "Warsaw");
 		dict.Add("Japan", "Tokyo");
+		dict.Add("Jeff", "Goldblum");
 
 		var key = "Jeff";
-		Assert.True(true, dict.ContainsKey(key).ToString()); // How to make this statement true?          
+		Assert.True(dict.ContainsKey(key)); // How to make this statement true?          
 	}
 
 	//Check if a value exists in Dictionary.
@@ -56,9 +57,10 @@ public class AboutDictionary : Koan
 		dict.Add("United Kingdom", "London");
 		dict.Add("Poland", "Warsaw");
 		dict.Add("Japan", "Tokyo");
+		dict.Add("Legolas", "Archer");
 
 		var val = "Archer";
-		Assert.True(true, dict.ContainsValue(val).ToString()); // How to make this statement true?          
+		Assert.True(dict.ContainsValue(val)); // How to make this statement true?          
 	}
 
 	//Update the value of a key in dictionary.
@@ -76,7 +78,7 @@ public class AboutDictionary : Koan
 		var expectedValue = "New Delhi";
 
 		//May be you should update this
-		//dict[key] = FILL_ME_IN;
+		dict[key] = "New Delhi";
 
 		Assert.Equal(expectedValue, dict[key]); // How to make this statement true?          
 	}
@@ -97,7 +99,7 @@ public class AboutDictionary : Koan
 		if (dict.ContainsKey(keyToRemove))
 			dict.Remove(keyToRemove);
             
-		Assert.True(dict.ContainsKey(keyToRemove)); // How to make this statement true?          
+		Assert.False(dict.ContainsKey(keyToRemove)); // How to make this statement true?          
 	}
 
 }
