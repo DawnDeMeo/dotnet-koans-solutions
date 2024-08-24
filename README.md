@@ -2,6 +2,11 @@
 
 This repo contains my own solutions. Please see the [original repo](https://github.com/DotNetKoans/DotNetKoans) for a clean copy to try for yourself.
 
+Note that AboutStrings.cs behaves differently on Windows and Mac, so the solutions in the file may not work for everyone. Also pay attention to what Visual Studio Code indicates for your line endings.
+
+- Dawn DeMeo
+
+
 
 <p align="center">
 <img width="300px" src="https://raw.githubusercontent.com/NotMyself/DotNetKoans/master/static/img/dot-net-koans-logo.svg" />
