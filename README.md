@@ -2,7 +2,11 @@
 
 This repo contains my own solutions. Please see the [original repo](https://github.com/DotNetKoans/DotNetKoans) for a clean copy to try for yourself.
 
+<<<<<<< HEAD
 <p></p>
+=======
+
+>>>>>>> 9cda314a2677e1d4879a803bdb3c0b874175ec01
 <p align="center">
 <img width="300px" src="https://raw.githubusercontent.com/NotMyself/DotNetKoans/master/static/img/dot-net-koans-logo.svg" />
 </p>
