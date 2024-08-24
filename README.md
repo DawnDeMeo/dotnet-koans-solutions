@@ -1,3 +1,8 @@
+# DotNet Koans Solutions
+
+This repo contains my own solutions. Please see the [original repo](https://github.com/DotNetKoans/DotNetKoans) for a clean copy to try for yourself.
+
+<p></p>
 <p align="center">
 <img width="300px" src="https://raw.githubusercontent.com/NotMyself/DotNetKoans/master/static/img/dot-net-koans-logo.svg" />
 </p>
