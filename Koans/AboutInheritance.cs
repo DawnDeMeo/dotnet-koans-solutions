@@ -1,5 +1,6 @@
 using Xunit;
 using DotNetKoans.Engine;
+using System;
 
 namespace DotNetKoans.Koans;
 
@@ -57,27 +58,27 @@ public class AboutInheritance : Koan
 	[Step(1)]
 	public void SubclassesHaveTheParentAsAnAncestor()
 	{
-		Assert.True(typeof(FillMeIn).IsAssignableFrom(typeof(Chihuahua)));
+		Assert.True(typeof(Dog).IsAssignableFrom(typeof(Chihuahua)));
 	}
 
 	[Step(2)]
 	public void AllClassesUltimatelyInheritFromAnObject()
 	{
-		Assert.True(typeof(FillMeIn).IsAssignableFrom(typeof(Chihuahua)));
+		Assert.True(typeof(Object).IsAssignableFrom(typeof(Chihuahua)));
 	}
 
 	[Step(3)]
 	public void SubclassesInheritBehaviorFromParentClass()
 	{
 		var chico = new Chihuahua("Chico");
-		Assert.Equal(FILL_ME_IN, chico.Name);
+		Assert.Equal("Chico", chico.Name);
 	}
 
 	[Step(4)]
 	public void SubclassesAddNewBehavior()
 	{
 		var chico = new Chihuahua("Chico");
-		Assert.Equal(FILL_ME_IN, chico.Wag());
+		Assert.Equal("Happy", chico.Wag());
 
 		//We can search the public methods of an object 
 		//instance like this:
@@ -93,16 +94,16 @@ public class AboutInheritance : Koan
 	public void SubclassesCanModifyExistingBehavior()
 	{
 		var chico = new Chihuahua("Chico");
-		Assert.Equal(FILL_ME_IN, chico.Bark());
+		Assert.Equal("yip", chico.Bark());
 
 		//Note that even if we cast the object back to a dog
 		//we still get the Chihuahua's behavior. It truly
 		//"is-a" Chihuahua
 		Dog dog = chico as Dog;
-		Assert.Equal(FILL_ME_IN, dog.Bark());
+		Assert.Equal("yip", dog.Bark());
 
 		var fido = new Dog("Fido");
-		Assert.Equal(FILL_ME_IN, fido.Bark());
+		Assert.Equal("WOOF", fido.Bark());
 	}
 
 	public class ReallyYippyChihuahua : Chihuahua
@@ -124,7 +125,7 @@ public class AboutInheritance : Koan
 	public void SubclassesCanRedefineBehaviorThatIsNotVirtual()
 	{
 		ReallyYippyChihuahua suzie = new ReallyYippyChihuahua("Suzie");
-		Assert.Equal(FILL_ME_IN, suzie.Wag());
+		Assert.Equal("WAG WAG WAG!!", suzie.Wag());
 	}
 
 	[Step(7)]
@@ -134,7 +135,7 @@ public class AboutInheritance : Koan
 		//method did what we defined in our class. But what happens
 		//when we do this?
 		Chihuahua bennie = new ReallyYippyChihuahua("Bennie");
-		Assert.Equal(FILL_ME_IN, bennie.Wag());
+		Assert.Equal("Happy", bennie.Wag());
 
 		//That's right. The behavior of the object is dependent solely
 		//on who you are pretending to be. Unlike when you override a
@@ -155,7 +156,7 @@ public class AboutInheritance : Koan
 	public void SubclassesCanInvokeParentBehaviorUsingBase()
 	{
 		var ralph = new BullDog("Ralph");
-		Assert.Equal(FILL_ME_IN, ralph.Bark());
+		Assert.Equal("WOOF, GROWL", ralph.Bark());
 	}
 
 	public class GreatDane : Dog
@@ -171,6 +172,6 @@ public class AboutInheritance : Koan
 	public void YouCanCallBaseEvenFromOtherMethods()
 	{
 		var george = new GreatDane("George");
-		Assert.Equal(FILL_ME_IN, george.Growl());
+		Assert.Equal("WOOF, GROWL", george.Growl());
 	}
 }
