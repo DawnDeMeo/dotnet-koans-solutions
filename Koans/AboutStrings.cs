@@ -64,7 +64,7 @@ broken line";
 
 		// Make sure to use a literal string.
 		// Escaped characters in verbatim strings are covered later.
-		var literalString = "I\nam a\nbroken line";
+		var literalString = "I\r\nam a\r\nbroken line";
 		Assert.Equal(literalString.Length, verbatimString.Length);
 
 		// For verbatim strings, the newline character used will depend on
@@ -197,7 +197,7 @@ broken line";
 	public void SeparatorsCanBeAdded()
 	{
 		var str = string.Format("{0:n}", 123456);
-		Assert.Equal("123,456.000", str);
+		Assert.Equal("123,456.00", str);
 	}
 
 	[Step(18)]
@@ -225,7 +225,7 @@ broken line";
 	public void BuiltInDateFormatters()
 	{
 		var str = string.Format("{0:t}", DateTime.Parse("12/16/2011 2:35:02 PM", CultureInfo.InvariantCulture));
-		Assert.Equal("2:35PM", str);
+		Assert.Equal("2:35 PM", str);
 	}
 
 	[Step(22)]
