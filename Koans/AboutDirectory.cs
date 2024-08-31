@@ -17,11 +17,11 @@ public class AboutDirectory : Koan
 	{            
 		Directory.CreateDirectory(fullPath);
 
-		Assert.Equal(FILL_ME_IN, Directory.Exists(fullPath));
+		Assert.Equal(true, Directory.Exists(fullPath));
 
-		Directory.Delete(fullPath);
+		Directory.Delete(fullPath, true);  // Added recursive parameter to make this statement behave
 
-		Assert.Equal(FILL_ME_IN, Directory.Exists(fullPath));
+		Assert.Equal(false, Directory.Exists(fullPath));
 	}
         
 	[Step(2)]
@@ -30,8 +30,8 @@ public class AboutDirectory : Koan
 		var directoryInfo = new DirectoryInfo(fullPath);
 		directoryInfo.Create();
 
-		Assert.Equal(FILL_ME_IN, directoryInfo.Exists);
-		Assert.Equal(FILL_ME_IN, directoryInfo.Name);
+		Assert.Equal(true, directoryInfo.Exists);
+		Assert.Equal("temp directory", directoryInfo.Name);
 
 		directoryInfo.Delete(false);
 	}
@@ -44,7 +44,7 @@ public class AboutDirectory : Koan
 		directoryInfo.CreateSubdirectory("subdirectory1");
 		directoryInfo.CreateSubdirectory("subdirectory2");
 
-		Assert.Equal(FILL_ME_IN, directoryInfo.GetDirectories().Length); // what is the number of subdirectories?
+		Assert.Equal(2, directoryInfo.GetDirectories().Length); // what is the number of subdirectories?
 
 		directoryInfo.Delete(true);
 	}
@@ -60,7 +60,7 @@ public class AboutDirectory : Koan
 		{
 		}
 
-		Assert.Equal(FILL_ME_IN, directoryInfo.GetFiles().Length); // what is the number of files that exist in this directory?
+		Assert.Equal(2, directoryInfo.GetFiles().Length); // what is the number of files that exist in this directory?
 
 		directoryInfo.Delete(true);
 
