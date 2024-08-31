@@ -21,7 +21,7 @@ public class AboutLambdas : Koan
 			return x.ToString();
 		});
 
-		Assert.Equal(FILL_ME_IN, result);
+		Assert.Equal(new []{ "1", "2", "3", "4" }, result);
 	}
 	[Step(2)]
 	public void AnonymousMethodsCanAccessOuterVariables()
@@ -30,7 +30,7 @@ public class AboutLambdas : Koan
 		//In C# this is called accessing an Outer Variable. In other languages it is called closure. 
 		var numbers = new[] { 4, 5, 6, 7, 8, 9 };
 		int toFind = 7;
-		Assert.Equal(FILL_ME_IN, Array.FindIndex(numbers, delegate (int x)
+		Assert.Equal(3, Array.FindIndex(numbers, delegate (int x)
 		{
 			return x == toFind;
 		}));
@@ -49,7 +49,7 @@ public class AboutLambdas : Koan
 		}
 		var numbers = new[] { 4, 5, 6, 7, 8, 9 };
 		//toFind is not available here, yet criteria still works
-		Assert.Equal(FILL_ME_IN, Array.FindIndex(numbers, criteria));
+		Assert.Equal(3, Array.FindIndex(numbers, criteria));
 	}
 
 	[Step(4)]
@@ -71,7 +71,7 @@ public class AboutLambdas : Koan
 		{
 			return x.ToString();
 		});
-		Assert.Equal(FILL_ME_IN, anonymous);
+		Assert.Equal(new []{ "1", "2", "3", "4" }, anonymous);
 		//The => pair is spoken as "going into". If you were talking about this 
 		//code with a peer, you would say "x going into..."
 	}
@@ -91,7 +91,7 @@ public class AboutLambdas : Koan
 		{
 			return x.ToString();
 		});
-		Assert.Equal(FILL_ME_IN, anonymous);
+		Assert.Equal(new []{ "1", "2", "3", "4" }, anonymous);
 	}
 
 	[Step(6)]
@@ -108,7 +108,7 @@ public class AboutLambdas : Koan
 		{
 			return x.ToString();
 		});
-		Assert.Equal(FILL_ME_IN, anonymous);
+		Assert.Equal(new []{ "1", "2", "3", "4" }, anonymous);
 	}
 
 	[Step(7)]
@@ -121,6 +121,6 @@ public class AboutLambdas : Koan
 		});
 		var lambda = Array.ConvertAll(numbers, x => x.ToString());
 		//When you have only one statement, the curly brackets are not needed. What other two things are also missing?
-		Assert.Equal(FILL_ME_IN, anonymous);
+		Assert.Equal(new []{ "1", "2", "3", "4" }, anonymous);
 	}
 }
