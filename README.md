@@ -2,7 +2,7 @@
 
 This repo contains my own solutions. Please see the [original repo](https://github.com/DotNetKoans/DotNetKoans) for a clean copy to try for yourself.
 
-Note that AboutStrings.cs behaves differently on Windows and Mac, so the solutions in the file may not work for everyone. Also pay attention to what Visual Studio Code indicates for your line endings.
+Note that AboutStrings.cs behaves differently on Windows and Mac, so the solutions in the file may not work for everyone. Also pay attention to what Visual Studio Code indicates for your line endings. I completed most of the first half in Windows using Visual Studio Code. The second half was mostly done in macOS using Visual Studio Code Insiders Edition, then JetBrains Rider. In all cases, I ran dontnet SDK 8.0.
 
 ~ Dawn DeMeo
 
