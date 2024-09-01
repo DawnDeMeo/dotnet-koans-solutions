@@ -35,7 +35,7 @@ public class AboutLinq : Koan
 			select n;
 
 		// 3. Query execution.
-		Assert.Equal(FILL_ME_IN, lowNums.Count());
+		Assert.Equal(1, lowNums.Count());
 	}
 
 	[Step(2)]
@@ -48,8 +48,8 @@ public class AboutLinq : Koan
 			orderby cust ascending //You can also use descending here for reverse order.
 			select cust;
 
-		Assert.Equal(FILL_ME_IN, orderedCustomers.First());
-		Assert.Equal(FILL_ME_IN, orderedCustomers.Last());
+		Assert.Equal("Anna", orderedCustomers.First());
+		Assert.Equal("Maria", orderedCustomers.Last());
 	}
 
 	[Step(3)]
@@ -60,7 +60,7 @@ public class AboutLinq : Koan
 		//Get just the 3 first numbers.
 		var first3Numbers = numbers.Take(3);
 
-		Assert.Equal(FILL_ME_IN, first3Numbers.Count());
+		Assert.Equal(3, first3Numbers.Count());
 	}
 
 	[Step(4)]
@@ -69,7 +69,7 @@ public class AboutLinq : Koan
 		string[] words = { "believe", "relief", "receipt", "field" };
 
 		bool iAfterE = words.Any(w => w.Contains("ei")); //Check if any of your words contain 'ei'
-		Assert.Equal(FILL_ME_IN, iAfterE);
+		Assert.Equal(true, iAfterE);
 	}
 
         
@@ -80,7 +80,7 @@ public class AboutLinq : Koan
 		var result = numbers.Where(x => x > 2).ToArray();
 			
 		//What values should be in array?
-		Assert.Equal(FILL_ME_IN, result);
+		Assert.Equal(new []{3, 4}, result);
 	}
 		
 	[Step(6)]
@@ -90,7 +90,7 @@ public class AboutLinq : Koan
 		var result = numbers.Select(x => x > 2).ToArray();
 			
 		//What values should be in array?
-		Assert.Equal(FILL_ME_IN, result);
+		Assert.Equal(new []{false, false, true, true}, result);
 	}
 
 	[Step(7)]
@@ -101,7 +101,7 @@ public class AboutLinq : Koan
 		//Get sum of the array.
 		var sum = numbers.Sum();
 
-		Assert.Equal(FILL_ME_IN, sum);
+		Assert.Equal(45, sum);
 	}
 
 	[Step(8)]
@@ -112,7 +112,7 @@ public class AboutLinq : Koan
 		//Get minimum of the array.
 		var min = numbers.Min();
 
-		Assert.Equal(FILL_ME_IN, min);
+		Assert.Equal(0, min);
 	}
 
 	[Step(9)]
@@ -123,7 +123,7 @@ public class AboutLinq : Koan
 		//Get maximum of the array.
 		var max = numbers.Max();
 
-		Assert.Equal(FILL_ME_IN, max);
+		Assert.Equal(9, max);
 	}
 
 
@@ -135,6 +135,6 @@ public class AboutLinq : Koan
 		//Get average of the array.
 		var average = numbers.Average();
 
-		Assert.Equal(FILL_ME_IN, average);
+		Assert.Equal(4.5, average);
 	}
 }
