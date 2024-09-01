@@ -20,11 +20,11 @@ class AboutPatternMatching : Koan
 		Hero hero = new Superman();
 
 		var message = GetHeroHelloMessageWithIf(hero);
-		Assert.Equal(FILL_ME_IN, message);
+		Assert.Equal("I'm Superman", message);
 
 
 		var message2 = GetHeroHelloMessageWithCase(hero);
-		Assert.Equal(FILL_ME_IN, message2);
+		Assert.Equal("I'm Superman", message2);
 	}
 
 	private string GetHeroHelloMessageWithIf(Hero hero)
@@ -65,10 +65,10 @@ class AboutPatternMatching : Koan
 		Hero hero = new Batman();
 
 		var gadgets = GetGadgetsWithIf(hero);
-		Assert.Equal(FILL_ME_IN, string.Join(",", gadgets));
+		Assert.Equal("Batarang,Batgyro,Batsuit,Batmobile,Belt", string.Join(",", gadgets));
 
 		var gadgets2 = GetGadgetsWithCase(hero);
-		Assert.Equal(FILL_ME_IN, string.Join(",", gadgets2));
+		Assert.Equal("Batarang,Batgyro,Batsuit,Batmobile,Belt", string.Join(",", gadgets2));
 	}
 
 	private string[] GetGadgetsWithIf(Hero hero)
@@ -110,7 +110,7 @@ class AboutPatternMatching : Koan
 			_ => new string[0] // default case
 		};
 
-		Assert.Equal(FILL_ME_IN, string.Join(",", gadgets));
+		Assert.Equal("Batarang,Batgyro,Batsuit,Batmobile,Belt", string.Join(",", gadgets));
 	}
 
 
@@ -135,7 +135,7 @@ class AboutPatternMatching : Koan
 			_ => "I don't know you" // default case
 		};
 
-		Assert.Equal(FILL_ME_IN, message);
+		Assert.Equal("You look like batman, but I don't think you are", message);
 	}
 
 	// Special case with destructuring on tuples
@@ -152,7 +152,7 @@ class AboutPatternMatching : Koan
 			_ => "I don't know you" // default case
 		};
 
-		Assert.Equal(FILL_ME_IN, message);
+		Assert.Equal("You look like Batman, but I don't think you are", message);
 	}
 
 	// Special case with destructuring on object
@@ -168,7 +168,7 @@ class AboutPatternMatching : Koan
 			_ => "I don't know you" // default case
 		};
 
-		Assert.Equal(FILL_ME_IN, message);
+		Assert.Equal("Sure, you are Batman", message);
 	}
 
 	#endregion
@@ -189,7 +189,7 @@ class AboutPatternMatching : Koan
 			_ => "I don't know you" // default case
 		};
 
-		Assert.Equal(FILL_ME_IN, message);
+		Assert.Equal("Sure, you are Batman", message);
 	}
 
 
@@ -207,7 +207,7 @@ class AboutPatternMatching : Koan
 			_ => "I don't know you" // default case
 		};
 
-		Assert.Equal(FILL_ME_IN, message);
+		Assert.Equal("I don't know you", message);
 	}
 
 	#endregion
