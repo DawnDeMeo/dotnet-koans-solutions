@@ -15,7 +15,7 @@ public class AboutBitwiseAndShiftOperator : Koan
 		//When 0001 convert to int it becomes 1
 		int x = 4 & 4;
 
-		Assert.Equal(FILL_ME_IN, x);
+		Assert.Equal(4, x);
 	}
 
 	[Step(2)]
@@ -28,7 +28,7 @@ public class AboutBitwiseAndShiftOperator : Koan
 		//When 0011 convert to int it becomes 3
 		int x = 4 | 4;
 
-		Assert.Equal(FILL_ME_IN, x);
+		Assert.Equal(4, x);
 	}
 
 	[Step(3)]
@@ -41,7 +41,7 @@ public class AboutBitwiseAndShiftOperator : Koan
 		//When 0010 convert to int it becomes 2
 		int x = 4 ^ 4;
 
-		Assert.Equal(FILL_ME_IN, x);
+		Assert.Equal(0, x);
 	}
 
 	[Step(4)]
@@ -52,7 +52,7 @@ public class AboutBitwiseAndShiftOperator : Koan
 		// ~1 become -2
 		int x = ~4;
 
-		Assert.Equal(FILL_ME_IN, x);
+		Assert.Equal(-5, x);
 	}
 
 	[Step(5)]
@@ -60,7 +60,7 @@ public class AboutBitwiseAndShiftOperator : Koan
 	{
 		int x = ~3 & 8;
 
-		Assert.Equal(FILL_ME_IN, x);
+		Assert.Equal(8, x);
 	}
 
 	[Step(6)]
@@ -68,7 +68,7 @@ public class AboutBitwiseAndShiftOperator : Koan
 	{
 		int x = 4 | 4 & 8;
 
-		Assert.Equal(FILL_ME_IN, x);
+		Assert.Equal(4, x);
 	}
 
 	[Step(7)]
@@ -76,7 +76,7 @@ public class AboutBitwiseAndShiftOperator : Koan
 	{
 		int x = 3 & 4 ^ 4 & ~8;
 
-		Assert.Equal(FILL_ME_IN, x);
+		Assert.Equal(4, x);
 	}
 
 	[Step(8)]
@@ -89,7 +89,7 @@ public class AboutBitwiseAndShiftOperator : Koan
 		//then it will become 8
 		int x = 10 << 2;
 
-		Assert.Equal(FILL_ME_IN, x);
+		Assert.Equal(40, x);
 	}
 
 	[Step(9)]
@@ -101,7 +101,7 @@ public class AboutBitwiseAndShiftOperator : Koan
 		//it becomes 0010
 		//then it will become 2
 		int x = 12 >> 2;
-		Assert.Equal(FILL_ME_IN, x);
+		Assert.Equal(3, x);
 	}
 
 	[Step(10)]
@@ -109,7 +109,7 @@ public class AboutBitwiseAndShiftOperator : Koan
 	{
 		int x = (5 << 2) & 8 ^ 3;
 
-		Assert.Equal(FILL_ME_IN, x);
+		Assert.Equal(3, x);
 	}
 
 	[Step(11)]
@@ -117,7 +117,7 @@ public class AboutBitwiseAndShiftOperator : Koan
 	{
 		int x = (5 >> 2) & (~8) ^ 8;
 
-		Assert.Equal(FILL_ME_IN, x);
+		Assert.Equal(9, x);
 	}
 
 	[Step(12)]
@@ -125,7 +125,7 @@ public class AboutBitwiseAndShiftOperator : Koan
 	{
 		int x = (8 << 2) & (~5) & 8 | 10 | (5 >> 1);
 
-		Assert.Equal(FILL_ME_IN, x);
+		Assert.Equal(10, x);
 	}
 
 	[Step(13)]
@@ -138,6 +138,17 @@ public class AboutBitwiseAndShiftOperator : Koan
 		int b = 4;
 
 		//Here goes your implementation to set value to FILL_ME_IN
-		Assert.Equal(FILL_ME_IN, 19);
+		int BitwiseAdd(int x, int y)
+		{
+			while (y != 0)
+			{
+				int carry = x & y;
+				x = x ^ y;
+				y = carry << 1;
+			}
+
+			return x;
+		}
+		Assert.Equal(BitwiseAdd(a, b), 19);
 	}
 }
